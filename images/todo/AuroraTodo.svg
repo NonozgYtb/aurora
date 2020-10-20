@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="128px" height="128px" viewBox="0 0 128 128" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>AuroraTodo</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="22.5898743%" y1="8.29162598%" x2="76.4801025%" y2="92.5628662%" id="linearGradient-1">
+            <stop stop-color="#0CB2BC" offset="0%"></stop>
+            <stop stop-color="#7B59A5" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="AuroraTodo">
+            <rect id="Rectangle" fill="url(#linearGradient-1)" x="0" y="0" width="128" height="128" rx="10"></rect>
+            <g id="Group" transform="translate(13.000000, 23.000000)" fill="#FEFEFE">
+                <rect id="Rectangle-2" opacity="0.55" transform="translate(29.479227, 52.179228) rotate(-45.000000) translate(-29.479227, -52.179228) " x="16.4792275" y="24.1964117" width="26" height="55.9656331" rx="13"></rect>
+                <rect id="Rectangle-2" opacity="0.75" transform="translate(62.000000, 41.000000) rotate(-315.000000) translate(-62.000000, -41.000000) " x="49" y="-3" width="26" height="88" rx="13"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

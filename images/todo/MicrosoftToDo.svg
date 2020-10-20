@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="128px" height="128px" viewBox="0 0 128 128" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+    <title>MicrosoftToDo</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="87.7728458%" y1="12.5324293%" x2="13.737723%" y2="88.6614435%" id="linearGradient-1">
+            <stop stop-color="#229FFF" offset="0%"></stop>
+            <stop stop-color="#5A74F8" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="MicrosoftToDo">
+            <g id="Microsoft">
+                <rect id="Rectangle" fill="#F6F7FA" x="0" y="0" width="128" height="128" rx="10"></rect>
+                <polygon id="path3004" fill="#97B8FA" fill-rule="nonzero" points="33.972332 44.3427629 14.2990429 64.2577291 34.0516597 83.8938858 53.7249488 64.337389"></polygon>
+                <polygon id="path2996" fill="url(#linearGradient-1)" fill-rule="nonzero" points="54.1442526 103.860064 34.0564721 83.894727 94.0347947 24.200197 113.980064 43.7737639"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

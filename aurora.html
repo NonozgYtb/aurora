@@ -1,0 +1,832 @@
+<!--
+
+  _________________       _____         _____      ________________       _________________        ________________       _________________   
+ /                 \     /     \       /     \    /                \     /                 \      /                \     /                 \  
+|                   |    |     |       |     |   |                  |   /       _____       \    |                  |   |                   | 
+|      _______      |    |     |       |     |   |      ______      |   |      /     \      |    |      ______      |   |      _______      | 
+|     |       |     |    |     |       |     |   |     |      |     |   |     |       |     |    |     |      |     |   |     |       |     | 
+|     |       |     |    |     |       |     |   |     |______|     |   |     |       |     |    |     |______|     |   |     |       |     | 
+|     |_______|     |    |     |       |     |   |                  |   |     |       |     |    |                  |   |     |_______|     | 
+|                   |    |     |       |     |   |             _____/   |     |       |     |    |             _____/   |                   | 
+|      _______      |    |     |       |     |   |     ;       \        |     |       |     |    |     ;       \        |      _______      | 
+|     |       |     |    |     |       |     |   |     |\        \      |     |       |     |    |     |\        \      |     |       |     | 
+|     |       |     |    |      \_____/      |   |     |  \        \    |      \_____/      |    |     |  \        \    |     |       |     | 
+|     |       |     |    \                   /   |     |    \       |   \                   /    |     |    \       |   |     |       |     | 
+\_____/       \_____/     \_________________/    \_____/      \_____/    \_________________/     \_____/      \_____/   \_____/       \_____/ 
+ 
+Copyright 2020 NonozgYtb
+
+-->
+<html>
+
+<head>
+  <title>New Tab</title>
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="styles/aurora-min.css" />
+  <link rel="shortcut icon" href="icons/icon-32.png" type="image/x-icon" />
+</head>
+
+<body>
+  <div id="auroraWallpaper">
+    <img src="/images/empty.png" data-src="" />
+  </div>
+  <img src="/images/loger.svg" height="58px" id="auroraLogo" />
+
+  <ul id="auroraMenu">
+    <li><a href="https://mail.google.com/mail/u/0/" target="_blink">Gmail</a></li>
+    <li><a href id="sliderBookmarks" class="slider-menu-item" data-slide="0">Bookmarks</a></li>
+    <li><a href id="sliderSearch" class="slider-menu-item active" data-slide="1">Dashboard</a></li>
+    <li><a href id="sliderHistory" class="slider-menu-item" data-slide="2">History</a></li>
+    <li><a href id="newNote">Note</a></li>
+    <li><a href id="openApps" class="slider-menu-icon" title="Apps"><i class="material-icons">apps</i></a></li>
+    <li><a href id="openSettings" class="slider-menu-icon" title="Settings"><i class="material-icons">settings</i></a>
+    </li>
+  </ul>
+  <ul id="auroraSlides">
+    <li>
+      <div id="bookmarksContainer" class="slide-container">
+        <div id="tabNavigation">
+          <div class="container">
+            <div class="columns">
+              <div class="column col-12">
+                <ul class="menu list-accent">
+                  <li class="menu-item menu-item-title">
+                    <div class="tile">
+                      <div class="tile-content">
+                        Boards
+                        <a href id="openBfaq" title="How to manage boards?">
+                          <i class="material-icons material-icon-hover float-right">info_outline</i>
+                        </a>
+                        <span class="float-right">&nbsp;</span>
+                        <a href id="bookmarksRefresh" title="Refresh boards">
+                          <i class="material-icons material-icon-hover float-right">refresh</i>
+                        </a>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="divider"></li>
+                  <div id="tabLeftNavigationContainer">
+                    <div id="tabLeftNavigation"></div>
+                  </div>
+                  <li class="divider"></li>
+                  <button id="openBookmarkManager" class="btn btn-block btn-accent btn-on-accent">Edit
+                    Bookmarks</button>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="tabContainer"></div>
+      </div>
+
+    </li>
+    <li>
+      <div id="searchTimeContainer" class="slide-container">
+        <div id="searchTimeMiddleContainer">
+          <div id="timeDate"></div>
+          <form id="googleSearch">
+            <span id="googleIcon"></span>
+            <input id="googleSearchInput" tabindex="1" x-webkit-speech>
+            <span id="googleSearchBar"></span>
+            <i id="googleMicIcon" class="material-icons" title="Search by voice">mic_none</i>
+          </form>
+        </div>
+
+        <div id="featuredBookmarksContainer"></div>
+
+        <div id="localTodo">
+          <div class="todo-header">
+            <span class="todo-counter">To-Do (<span id="localTodoCounter">0</span>)</span>
+            <span class="todo-status"></span>
+          </div>
+          <ul id="todoList"></ul>
+          <form id="todolistForm">
+            <div class="divider light"></div>
+            <input class="form-input" type="text" name="todo" placeholder="New to-do..." id="todobox">
+          </form>
+        </div>
+
+        <div id="dashboardDonate">
+          <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" id="paypalDonate">
+            <input type="hidden" name="cmd" value="_s-xclick">
+            <input type="hidden" name="hosted_button_id" value="YUFH6XRSMAH96">
+            <img alt="" border="0" src="https://www.paypalobjects.com/en_AU/i/scr/pixel.gif" width="1" height="1">
+          </form>
+
+          <span id="paypalDonateLabel" class="label label-primary">
+            <span>Do you like Aurora? <strong>Support Development & Donate.</strong> Thanks!</span>
+            <i id="paypalDonateClose" class="icon icon-cross"></i>
+          </span>
+        </div>
+
+        <div id="weatherToday"></div>
+        <div id="weatherForecast"></div>
+      </div>
+    </li>
+    <li>
+      <div id="historyContainer" class="slide-container">
+        <div id="historyNavigation">
+
+          <div class="container">
+            <div class="columns">
+              <div class="column col-12">
+                <ul class="menu list-accent">
+                  <li class="menu-item menu-item-title">
+                    <div class="tile">
+                      <div class="tile-content">
+                        Filter
+                        <a href id="historyRefresh" title="Refresh history"><i
+                            class="material-icons material-icon-hover float-right">refresh</i></a>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="divider"></li>
+                  <li class="history-text-filter">
+                    <a href id="historyFilterClear"><i class="icon icon-cross"></i></a>
+                    <input id="historyTextFilter" class="form-input input" type="text"
+                      placeholder="filter by keyword..." />
+                  </li>
+                  <li class="divider"></li>
+                  <li class="menu-item history-filter active">
+                    <a href="#" class="menu-item-url" data-filter="today">Today</a>
+                  </li>
+                  <li class="menu-item history-filter">
+                    <a href="#" class="menu-item-url" data-filter="yesterday">Yesterday</a>
+                  </li>
+                  <li class="menu-item history-filter">
+                    <a href="#" class="menu-item-url" data-filter="week">Last Week</a>
+                  </li>
+                  <li class="divider"></li>
+                  <button id="openHistoryManager" class="btn btn-block btn-accent btn-on-accent">Chrome History</button>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div id="historyListContainer">
+          <div class="container">
+            <div class="columns">
+              <div class="column col-12">
+                <ul class="menu list-accent">
+                  <li class="menu-item menu-item-title">
+                    <div class="tile">
+                      <div class="tile-content">
+                        History
+                      </div>
+                    </div>
+                  </li>
+                  <li class="divider"></li>
+                  <div data-column="chrome-history" class="animated fadeIn"></div>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </li>
+  </ul>
+
+  <div id="modalAbout" class="modal modal-sm">
+    <div class="modal-overlay"></div>
+    <div class="modal-container">
+      <div class="modal-header">
+        <button class="close-modal btn btn-clear float-right"></button>
+        <div class="modal-title">About</div>
+      </div>
+      <div class="modal-body" style="padding-top: 0;">
+        <div class="content text-center">
+
+          <img src="/images/loginger2.svg" width="160" />
+          <div class="pt-10"></div>
+          <div class="pt-10"></div>
+
+          <p>L'extension de dashboard Chrome.</p>
+
+          <small>Created by <a href="#">NonozgYtb</a>, Version <span data-ver="appVer"></span></small>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="modalApps" class="modal modal-lg">
+    <div class="modal-overlay"></div>
+    <div class="modal-container">
+      <div class="modal-header">
+        <button id="closeApps" class="btn btn-clear float-right"></button>
+        <div class="modal-title">Apps</div>
+      </div>
+      <div class="modal-body">
+        <div class="content"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="modalPrivacy" class="modal modal-md">
+    <div class="modal-overlay"></div>
+    <div class="modal-container">
+      <div class="modal-header">
+        <button class="close-modal btn btn-clear float-right"></button>
+        <div class="modal-title">Privacy Policy</div>
+      </div>
+      <div class="modal-body">
+        <div class="content">
+
+          <p>This privacy policy applies to Aurora extension for Google Chrome.</p>
+          <strong>Information gathering and usage</strong>
+
+          <p>We do NOT collect any personal informations stored within the extension. We collect anonymous usage data
+            using an industry standard third party analytics service (Google Analytics) to better understand the
+            performance of our service. The information we collect via third party services does not contain personal
+            information. The information we collect is used to improve Aurora and the quality of our service, and is not
+            shared with or sold to others.</p>
+          <strong>Your data</strong>
+
+          <p>Aurora uses third party vendors and hosting partners to provide the necessary hardware, software,
+            networking, storage, and related technology required to run Aurora. Although Aurora owns the code,
+            databases, and all rights to the Aurora extension, you retain all rights to your data.</p>
+          <strong>Security</strong>
+
+          <p>We make security a priority across the lifecycle. All communication with third party servers is secure,
+            using SSL/TLS (HTTPS and HSTS).</p>
+          <strong>Changes</strong>
+
+          <p>Although most changes are likely to be minor, Aurora team may change its Privacy Policy from time to time,
+            and in Aurora's sole discretion. Aurora encourages visitors to frequently check this page for any changes to
+            its Privacy Policy. Your continued use of this site after any change in this Privacy Policy will constitute
+            your acceptance of such change.</p>
+          <p>If you have any questions, please contact us via support page.</p>
+
+          <small>Last updated July 20th, 2017.</small>
+          <div class="pt-10"></div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="modalBookmarksFaq" class="modal modal-lg">
+    <div class="modal-overlay"></div>
+    <div class="modal-container">
+      <div class="modal-header">
+        <button class="close-modal btn btn-clear float-right"></button>
+        <div class="modal-title">Welcome to Aurora Bookmarks</div>
+      </div>
+      <div class="modal-body">
+        <div class="content">
+
+          <h4>Basic Info</h4>
+          <p class="text-justify">Aurora Bookmarks uses your browser bookmarks and displays them in easy to read Boards
+            and Lists. All changes made in the Aurora Bookmarks are synced and backed up with Google. Once you have
+            created your boards and lists you can continue
+            to use your bookmarks as before, with the added benefit of visual categorisation.</p>
+          <p>To start simply click on <strong>Edit Bookmarks</strong> button on the left panel and select tripple dot
+            icon in the top right corner of the <strong>Bookmarks</strong> window, then select <strong>Add New
+              Folder</strong>.
+            You can drag or rename the folders in this window to create your desire board/list structure.</p>
+
+          <p>Correct folder structure should look like this:</p>
+
+          <p>
+            <strong>
+              <i class="material-icons folder-path">folder</i> Other Bookmarks
+              <i class="material-icons arrow-path">arrow_forward</i>
+              <i class="material-icons folder-path">folder</i> My Board
+              <i class="material-icons arrow-path">arrow_forward</i>
+              <i class="material-icons folder-path">folder</i> My List
+              <i class="material-icons arrow-path">arrow_forward</i>
+              <i class="material-icons star-path">star</i> My Bookmark(s)
+            </strong>
+          </p>
+
+          <div class="pt-10"></div>
+          <div class="divider"></div>
+          <div class="pt-10"></div>
+
+          <h4>Sturucture</h4>
+
+          <div class="container">
+            <div class="columns">
+              <div class="column col-6">
+
+                <h5>Boards</h5>
+                <p class="text-justify">Boards are created from the first level of the <strong>Bookmarks</strong> <i
+                    class="material-icons arrow-path">arrow_forward</i> <strong>Other Bookmarks</strong> folder. The
+                  board navigation panel will only list folders and
+                  not bookmarks. If you have any bookmarks directly in <strong>Other Bookmarks</strong> folder, move
+                  them
+                  into your desired list subfolder.
+                </p>
+
+              </div>
+              <div class="column col-6">
+
+                <h5>Lists</h5>
+                <p class="text-justify">Lists are created from the second level of the folders within the directory
+                  above. If you have uncategorised bookmarks within your board folder, the Aurora Bookmarks will create
+                  a
+                  list called <strong>Uncategorised</strong> where all your
+                  uncategorised bookmarks will be listed. Within a single list you can mix bookmarks as well as folders.
+                  Every next level of folders from here will be treated as a subcategory and listed as a heading.</p>
+
+              </div>
+              <div class="column col-12">
+                <div class="text-center">
+                  <img src="/images/articles/bookmark-manager.png" class="modal-faq-img rounded" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-10"></div>
+          <div class="divider"></div>
+          <div class="pt-10"></div>
+
+          <h4>Reordering</h4>
+          <p class="text-justify">The default order of your lists is from the left to right. The order of your boards,
+            list &amp; bookmarks reflects the folder order in the Bookmark window. In addition to the default order you
+            have the ability to move an entire list to
+            the next column and leave a blank space in between columns. To make a space between lists just create an
+            empty folder within your board with the name <strong>"---"</strong>.</p>
+          <div class="pt-10"></div>
+
+          <div class="text-center">
+            <img src="/images/articles/reorder-lists.png" class="modal-faq-img rounded" />
+          </div>
+
+          <div class="pt-10"></div>
+          <div class="divider"></div>
+          <div class="pt-10"></div>
+          <h4>Featured Bookmarks</h4>
+          <p class="text-justify">By default Aurora will create a
+            folder called <strong>*Aurora Featured*</strong> within your browser bookmarks to which you can drag any
+            bookmark you wish to display on
+            your Dashboard. You can hide Featured Bookmarks within the settings however the folder will not be deleted.
+          </p>
+          <div class="pt-10"></div>
+
+        </div>
+      </div>
+      <div class="modal-footer"></div>
+    </div>
+  </div>
+  <div id="modalMicrophone" class="modal">
+    <div class="modal-overlay voice-overlay"></div>
+    <div class="modal-container voice-container">
+
+      <div class="pulse-container">
+        <div class="pulse-box">
+          <svg class="pulse-svg" width="100px" height="100px" viewBox="0 0 50 50" version="1.1"
+            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <circle class="circle first-circle" fill="#FFF" cx="25" cy="25" r="25"></circle>
+            <circle class="circle second-circle" fill="#FFF" cx="25" cy="25" r="25"></circle>
+            <circle class="circle third-circle" fill="#FFF" cx="25" cy="25" r="25"></circle>
+            <circle class="circle" fill="#FFF" cx="25" cy="25" r="25"></circle>
+            <path class="mic" fill="#21252B"
+              d="M12 14c1.66 0 2.99-1.34 2.99-3L15 5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.3-3c0 3-2.54 5.1-5.3 5.1S6.7 14 6.7 11H5c0 3.41 2.72 6.23 6 6.72V21h2v-3.28c3.28-.48 6-3.3 6-6.72h-1.7z" />
+          </svg>
+        </div>
+        <a href id="closeMicrophone" class="voice-close">Speak now, listening...<br /><i
+            class="material-icons">close</i></a>
+      </div>
+    </div>
+  </div>
+
+  <div id="modalFeedback" class="modal modal-lg">
+    <div class="modal-overlay"></div>
+    <div class="modal-container">
+      <div class="modal-header">
+        <button class="close-modal btn btn-clear float-right"></button>
+        <div class="modal-title">Feedback Forum</div>
+      </div>
+      <div class="modal-body">
+        <div class="content">
+
+          <div id="userReport"></div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="modalTodo" class="modal modal-md">
+    <div class="modal-overlay"></div>
+    <div class="modal-container">
+      <div class="modal-header">
+        <button class="close-modal btn btn-clear float-right"></button>
+        <div class="modal-title">Link To-Do List Provider</div>
+      </div>
+      <div class="modal-body">
+        <div class="content text-center">
+
+          <div class="pt-10"></div>
+
+          <h4>Welcome to Aurora To-Do</h4>
+          <p>Please link your to-do list provider with Aurora.<br />If you don't have one, you can Sign Up with any of
+            the below for free.
+            </br />Remember to select <strong>'Keep me signed in'</strong> if possible.</p>
+
+          <div class="pt-10"></div>
+          <div class="pt-10"></div>
+
+          <a href="local" data-id="Aurora" class="todo-item">
+            <img src="images/todo/AuroraToDo.svg" width="96">
+            <span>Aurora To-Do</span>
+          </a>
+
+          <a href="https://todoist.com/app" data-id="Todoist" class="todo-item">
+            <img src="images/todo/Todoist.svg" width="96">
+            <span>Todoist</span>
+          </a>
+
+          <a href="https://todo.microsoft.com" data-id="Microsoft" class="todo-item">
+            <img src="images/todo/MicrosoftToDo.svg" width="96">
+            <span>Microsoft To-Do</span>
+          </a>
+
+          <a href="https://keep.google.com/" data-id="Google" class="todo-item">
+            <img src="images/todo/GoogleKeep.svg" width="96">
+            <span>Google Keep</span>
+          </a>
+
+          <a href="https://www.rememberthemilk.com/app/" data-id="RememberTheMilk" class="todo-item">
+            <img src="images/todo/RememberTheMilk.svg" width="96">
+            <span>Remember The Milk</span>
+          </a>
+
+          <a href="https://www.wunderlist.com/webapp" data-id="Wunderlist" class="todo-item">
+            <img src="images/todo/Wunderlist.svg" width="96">
+            <span>Wunderlist</span>
+          </a>
+
+          <div class="pt-10"></div>
+          <div class="pt-10"></div>
+          <small>You can change this selection at any time within the Settings page.</small>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="modalSettings" class="modal modal-lg">
+    <div class="modal-overlay"></div>
+    <div class="modal-container">
+      <div class="modal-header">
+        <button class="close-modal btn btn-clear float-right"></button>
+        <div class="modal-title">Settings</div>
+      </div>
+      <div class="modal-body">
+        <div class="content">
+          <h6>General</h6>
+
+          <div class="form-horizontal">
+            <div class="form-group">
+              <div class="col-4">
+                <label class="form-label">Landing Page</label>
+              </div>
+              <div class="col-8">
+                <div id="settingDefaultSlide" class="btn-group">
+                  <button class="btn btn-link" data-setting="slideDashboard" data-value="s1">Dashboard</button>
+                  <button class="btn btn-link" data-setting="slideBookmarks" data-value="s0">Bookmarks</button>
+                  <button class="btn btn-link" data-setting="slideHistory" data-value="s2">History</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-4">
+                <label class="form-label">Clock Format</label>
+              </div>
+              <div class="col-8">
+                <div id="settingClockFormat" class="btn-group">
+                  <button class="btn btn-link" data-setting="clock12" data-value="12">12 hour</button>
+                  <button class="btn btn-link" data-setting="clock24" data-value="24">24 hour</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-4">
+                <label class="form-label">Show Weather</label>
+              </div>
+              <div class="col-8">
+                <div id="settingWeather" class="btn-group">
+                  <button class="btn btn-link" data-setting="weYes" data-value="Yes">Yes</button>
+                  <button class="btn btn-link" data-setting="weNo" data-value="No">No</button>
+                </div>
+              </div>
+            </div>
+            <div id="showWeather">
+              <div class="form-group">
+                <div class="col-4">
+                  <label class="form-label">Weather Units</label>
+                </div>
+                <div class="col-8">
+                  <div id="settingWeatherUnits" class="btn-group">
+                    <button class="btn btn-link" data-setting="wunitC" data-value="C">&deg;C</button>
+                    <button class="btn btn-link" data-setting="wunitF" data-value="F">&deg;F</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="col-4">
+                  <label class="form-label">Weather Location</label>
+                </div>
+                <div class="col-8">
+                  <div id="settingWeatherLocation" class="btn-group">
+                    <button class="btn btn-link" data-setting="wlAuto" data-value="Auto">Auto</button>
+                    <button class="btn btn-link" data-setting="wlCustom" data-value="Custom">Custom</button>
+                  </div>
+                  <div class="pt-10"></div>
+                  <div class="col-10">
+                    <div id="customWeatherLocation" style="position: relative">
+                      <div class="input-group">
+                        <button id="clearCustomWeather" class="btn btn-default input-group-btn"><i
+                            class="icon icon-cross"></i></button>
+                        <input class="form-input" type="text" data-setting="customWeatherLocation"
+                          placeholder="Enter city name..." />
+                        <button id="setCustomLocation" class="btn btn-default input-group-btn">Set Location</button>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- <small><strong>Info: </strong>If the weather won't refresh itsealf automatically, click <a href id="refreshWeather">here</a>.</small> -->
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-4">
+                  <label class="form-label">Wind Units</label>
+                </div>
+                <div class="col-8">
+                  <div id="settingWindUnits" class="btn-group">
+                    <select class="form-select">
+                      <option value="Auto" selected>Auto</option>
+                      <option value="mph">mph</option>
+                      <option value="km/h">km/h</option>
+                      <option value="m/s">m/s</option>
+                      <option value="knots">Knots</option>
+                      <option value="bft">Beaufort</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="divider"></div>
+          <div class="pt-10"></div>
+          <h6>Bookmarks</h6>
+          <div class="form-horizontal">
+            <div class="form-group">
+              <div class="col-4">
+                <label class="form-label">Grid</label>
+              </div>
+              <div class="col-8">
+                <div id="settingGridBookmarks" class="btn-group">
+                  <button class="btn btn-link" data-setting="col3" data-value="3">3 Columns</button>
+                  <button class="btn btn-link" data-setting="col4" data-value="4">4 Columns</button>
+                  <button class="btn btn-link" data-setting="col5" data-value="5">5 Columns</button>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-4">
+                <label class="form-label">Open As</label>
+              </div>
+              <div class="col-8">
+                <div id="settingOpenBookmarks" class="btn-group">
+                  <button class="btn btn-link" data-setting="self" data-value="_self">Current Tab</button>
+                  <button class="btn btn-link" data-setting="blank" data-value="_blank">New Tab</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-4">
+                <label class="form-label">Featured</label>
+              </div>
+              <div class="col-8">
+                <div id="settingFeaturedBookmarks" class="btn-group">
+                  <button class="btn btn-link" data-setting="featuredYes" data-value="true">Show</button>
+                  <button class="btn btn-link" data-setting="featuredNo" data-value="false">Hide</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+          <div class="pt-10"></div>
+          <h6>Background</h6>
+          <div class="form-horizontal">
+            <div class="form-group">
+              <div class="col-4">
+                <label class="form-label">Type</label>
+              </div>
+              <div class="col-8">
+                <div id="settingBackground" class="btn-group">
+                  <button class="btn btn-link" data-setting="bgAuto" data-value="Auto">Auto</button>
+                  <button class="btn btn-link" data-setting="bgCustom" data-value="Custom">Custom</button>
+                </div>
+              </div>
+            </div>
+
+            <div id="customBackground">
+              <!-- <div class="form-group">
+                                              <div class="col-4">
+                                                <label class="form-label">Random</label>
+                                              </div>
+                                              <div class="col-4">
+                                                <button id="generateBgImage" class="btn btn-link">Click to Generate</button>
+                                              </div>
+                                              <div class="col-4">
+                                                <div id="generatedBgImage" class="rounded"></div>
+                                              </div>
+                                            </div> -->
+              <div class="form-group">
+                <div class="col-4">
+                  <label class="form-label">Custom Link</label>
+                </div>
+                <div class="col-8">
+                  <div class="input-group">
+                    <button id="clearBgImage" class="btn btn-default input-group-btn"><i
+                        class="icon icon-cross"></i></button>
+                    <input class="form-input" type="text" data-setting="bgURL" placeholder="Image url...." />
+                    <button id="setBgImage" class="btn btn-default input-group-btn">Set</button>
+                  </div>
+                  <small><strong>Info: </strong>Use with Dropbox or other image hosting.</small>
+                </div>
+              </div>
+              <div class="pt-10"></div>
+              <div class="form-group">
+                <div class="col-4">
+                  <label class="form-label">Unsplash.com</label>
+                </div>
+                <div class="col-8">
+                  <button data-id="getUnsplashBg" data-setting="2Kd" class="btn btn-link">Daily 2K</button>
+                  <button data-id="getUnsplashBg" data-setting="5Kd" class="btn btn-link">Daily 5K</button>
+                  <button data-id="getUnsplashBg" data-setting="2Kw" class="btn btn-link">Weekly 2K</button>
+                  <button data-id="getUnsplashBg" data-setting="5Kw" class="btn btn-link">Weekly 5K</button>
+                  <div class="input-group">
+                    <input class="form-input" type="text" data-setting="bgKeywords"
+                      placeholder="Optional keywords..." />
+                    <button id="setBgKeywords" class="btn btn-default input-group-btn">Set</button>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-4"></div>
+                <div class="col-8">
+                  <small><strong>Info: </strong>Click on one of the links above to generate a custom background link
+                    which will change the background daily or weekly automaticly. You can input keywords (nature,
+                    animals).</small>
+                </div>
+              </div>
+              <div class="pt-10"></div>
+              <div class="form-group">
+                <div class="col-4">
+                  <label class="form-label">Plain Color</label>
+                </div>
+                <div class="col-4">
+                  <div class="input-group">
+                    <button id="clearBgColor" class="btn btn-default input-group-btn"><i
+                        class="icon icon-cross"></i></button>
+                    <input class="form-input jscolor" type="text" data-setting="bgColor" />
+                    <button id="setBgColor" class="btn btn-default input-group-btn">Set</button>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-4">
+                  <label class="form-label">Opacity</label>
+                </div>
+                <div class="col-8">
+                  <input class="slider" type="range" min="0" max="1" step="0.1" value="1" data-setting="bgOpacity" />
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="divider"></div>
+          <div class="pt-10"></div>
+          <h6>To-Do</h6>
+          <div class="form-horizontal" style="padding-bottom: 0">
+            <div class="form-group">
+              <div class="col-4">
+                <label class="form-label">Menu Link</label>
+              </div>
+              <div class="col-8">
+                <div id="settingTodoShow" class="btn-group">
+                  <button class="btn btn-link" data-setting="todoYes" data-value="true">Show</button>
+                  <button class="btn btn-link" data-setting="todoNo" data-value="false">Hide</button>
+                </div>
+              </div>
+            </div>
+
+            <div id="showTodo">
+              <div class="form-group">
+                <div class="col-4">
+                  <label class="form-label">Provider</label>
+                </div>
+                <div class="col-8">
+                  <div id="settingTodoProvider" class="btn-group">
+                    <select class="form-select">
+                      <option value="not-selected" selected>Not Selected</option>
+                      <option value="local">Aurora To-Do</option>
+                      <option value="https://todo.microsoft.com">Microsoft To-Do</option>
+                      <option value="https://keep.google.com/">Google Keep</option>
+                      <option value="https://todoist.com/app">Todoist</option>
+                      <option value="https://www.rememberthemilk.com/app/">Remember The Milk</option>
+                      <option value="https://www.wunderlist.com/webapp">Wunderlist</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="modalWhatsNew" class="modal modal-md">
+    <div class="modal-overlay"></div>
+    <div class="modal-container">
+      <div class="modal-header"></div>
+      <div class="modal-body">
+        <div class="content text-center">
+
+          <img src="/images/logo.svg" width="64" height="64" />
+          <div class="pt-10"></div>
+          <div class="pt-10"></div>
+          <h4>Our new companion extension has arrived!</h4>
+          <p>Two themes Light & Dark, native experience</p>
+          <!-- <h4>Welcome to Aurora <span data-ver="appVer"></span></h4> -->
+
+          <!-- <div class="columns col-gapless">
+                                              <div class="column col-2"></div>
+                                              <div class="column col-8 text-left">
+                                                <div class="divider"></div>
+                                                <dl>
+                                                  <dt>What's New:</dt>
+                                                  <dd>&bull; Big performance boost</dd>
+                                                  <dd>&bull; Added option to donate & support Aurora development</dd>
+                                                  <dd>&bull; Added Google Calendar integration</dd>
+                                                  <dt>Dashboard</dt>
+                                                  <dd>&bull; Added new local backgrounds</dd>
+                                                  <dd>&bull; Fixed issues with weather localization</dd>
+                                                  <dd>&bull; Fixed issues with Aurora To-Do</dd>
+                                                  <dt>Bookmarks</dt>
+                                                  <dd>&bull; Improved quality of favicons</dd>
+                                                  <dd>&bull; Updated Bookmarks FAQ</dd>
+                                                  <dd>&bull; Fixed issue with Bookmarks not loading in certain scenarios</dd>
+                                                  <dd>&bull; Bookmarks grid can now be adusted within the settings</dd>
+                                                </dl>
+                                                <div class="divider"></div>
+                                                <div class="column col-12 text-center">
+                                                  <small>If you like this extention, please rate your experience by clicking the star icon in the top right-hand corner & donate $5. More stars = more users = more features. Thanks!</small>
+                                                </div>
+                                              </div>
+                                              <div class="column col-2"></div>
+                                            </div> -->
+
+          <div class="column col-12">
+            <div class="text-center">
+              <img src="/images/minima.png" class="img-fit-contain" style="max-width: 585px">
+            </div>
+          </div>
+
+          <div class="columns col-gapless">
+            <div class="column col-2"></div>
+            <div class="column col-3"><button class="btn btn-block" id="gotIt">Skip</button></div>
+            <div class="column col-2"></div>
+            <div class="column col-3"><button class="btn btn-block btn-primary" id="tryMinima">Cool, let's try</button>
+            </div>
+            <div class="column col-2"></div>
+          </div>
+          <div class="pt-10"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.min.js"></script>
+  <script src="https://js.api.here.com/v3/3.0/mapsjs-core.js" type="text/javascript" charset="utf-8"></script>
+  <script src="https://js.api.here.com/v3/3.0/mapsjs-service.js" type="text/javascript" charset="utf-8"></script>
+  <script type="text/javascript" src="scripts/vendors-min.js"></script>
+  <script type="text/javascript" src="scripts/aurora-min.js"></script>
+</body>
+
+<div id="auroraLoading">
+  <div class="loading-overlay centered">
+    <div class="loading"></div>
+  </div>
+</div>
+
+
+
+</html>

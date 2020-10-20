@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="128px" height="128px" viewBox="0 0 128 128" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+    <title>GoogleKeep</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="GoogleKeep">
+            <g id="Google-Keep">
+                <path d="M10.6666667,128 L92.4444444,128 L128,92.4444444 L128,10.6666667 C128,4.77511111 123.224889,0 117.333333,0 L10.6666667,0 C4.77511111,0 0,4.77511111 0,10.6666667 L0,117.333333 C0,123.224889 4.77511111,128 10.6666667,128 Z" id="Shape" fill="#FFC107" fill-rule="nonzero"></path>
+                <polygon id="Shape" fill="#FFECB3" fill-rule="nonzero" points="92.4444444 128 92.4444444 92.4444444 128 92.4444444"></polygon>
+                <path d="M92.4444444,49.7777778 C92.4444444,34.0693333 79.7084444,21.3333333 64,21.3333333 C48.2915556,21.3333333 35.5555556,34.0693333 35.5555556,49.7777778 C35.5555556,61.7137778 42.912,71.9146667 53.3333333,76.1351111 L53.3333333,103.111111 L74.6666667,103.111111 L74.6666667,76.1351111 C85.088,71.9146667 92.4444444,61.7137778 92.4444444,49.7777778 Z" id="Shape" stroke="#FFFFFF" stroke-width="7"></path>
+                <rect id="Rectangle-path" fill="#FFFFFF" fill-rule="nonzero" x="56.8888889" y="103.111111" width="14.2222222" height="10.6666667"></rect>
+                <path d="M53.3333333,88 L74.6666667,88" id="Shape" stroke="#FFFFFF" stroke-width="7"></path>
+            </g>
+        </g>
+    </g>
+</svg>

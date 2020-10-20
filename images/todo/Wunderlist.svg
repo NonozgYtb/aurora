@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="128px" height="128px" viewBox="0 0 128 128" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+    <title>Wunderlist</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Wunderlist">
+            <g id="BG">
+                <rect id="Rectangle" fill="#D88448" x="0" y="0" width="128" height="128" rx="10"></rect>
+                <rect id="Rectangle" fill="#FFFFFF" x="8" y="8" width="112" height="112" rx="10"></rect>
+            </g>
+            <path d="M26.0057785,4 C24.3457329,4 23,5.34841216 23,6.99792799 L23,124.067308 L63.8654808,103.987555 L104.730962,124.067308 L104.730962,6.99792799 C104.730962,5.34221808 103.380558,4 101.725183,4 L26.0057785,4 Z" id="Ribbon" fill="#E9442A"></path>
+            <polygon id="Star" fill="#FFFFFF" points="64.1029453 78.2182436 46.4310132 91.1881516 52.9082371 70.2557602 35 57.5010834 57.1964823 57.5010834 64.1029453 36 71.1601624 57.2562588 93.3180254 57.5010834 75.4047424 70.2557602 82.1091171 91.1881516"></polygon>
+        </g>
+    </g>
+</svg>

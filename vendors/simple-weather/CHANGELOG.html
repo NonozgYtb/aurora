@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<meta charset="utf-8"/>
+</head>
+<body>
+
+<h1 id="simpleweatherchangelog">simpleWeather Changelog</h1>
+
+<p>For a more complete changelog you can always check out the <a href="https://github.com/monkeecreate/jquery.simpleWeather/commits/master">commit log</a>.</p>
+
+<h2 id="v3.1.0-january292016">v3.1.0 - January 29 2016</h2>
+
+<ul>
+<li>Fixed location errors due to Yahoo removing geo.placefinder from their API. It has been replaced with geo.places. <a href="#cn:1" id="cnref:1" title="see citation" class="citation">(1)</a>(https://github.com/monkeecreate/jquery.simpleWeather/issues/174)</li>
+<li>Fixed error callback to correctly return an error message. <a href="#cn:2" id="cnref:2" title="see citation" class="citation">(2)</a>(https://github.com/monkeecreate/jquery.simpleWeather/issues/101)</li>
+</ul>
+
+<h2 id="v3.0.2-june22014">v3.0.2 - June 2 2014</h2>
+
+<ul>
+<li>Fixed result issue when more than one location was returned. <a href="#cn:3" id="cnref:3" title="see citation" class="citation">(3)</a>(https://github.com/monkeecreate/jquery.simpleWeather/issues/90)</li>
+</ul>
+
+<h2 id="v3.0.1-may222014">v3.0.1 - May 22 2014</h2>
+
+<ul>
+<li>Fixed forecast thumbnail and image bug. <a href="#cn:4" id="cnref:4" title="see citation" class="citation">(4)</a>(https://github.com/monkeecreate/jquery.simpleWeather/issues/88)</li>
+</ul>
+
+<h2 id="v3.0-may172014">v3.0 - May 17 2014</h2>
+
+<ul>
+<li>Complete rewrite! Removed over 100 lines of code without losing functionality.</li>
+<li>Now &lt; 4.0 kB in size.</li>
+<li>Added forecast thumbnail image.</li>
+<li>Removed tomorrow in favor of forecast.</li>
+<li>Fixed http/https issue on API call <a href="#cn:5" id="cnref:5" title="see citation" class="citation">(5)</a>(https://github.com/monkeecreate/jquery.simpleWeather/pull/79) and images.</li>
+<li>Hat tip to <a href="https://github.com/defvayne23">@defvayne23</a> for a quick code review.</li>
+</ul>
+
+<h2 id="v2.7-april172014">v2.7 - April 17 2014</h2>
+
+<ul>
+<li>Added gulp and a build/release process.</li>
+<li>Fix for 3200 (not available) condition code and related image <a href="#cn:6" id="cnref:6" title="see citation" class="citation">(6)</a>(https://github.com/monkeecreate/jquery.simpleWeather/issues/77).</li>
+<li>Fixed my assumption of query being present <a href="#cn:7" id="cnref:7" title="see citation" class="citation">(7)</a>(https://github.com/monkeecreate/jquery.simpleWeather/issues/72). Hat tip to <a href="https://github.com/rjackson">@rjackson</a>.</li>
+<li>Some general code cleanup.</li>
+</ul>
+
+<h2 id="v2.6-february262014">v2.6 - February 26 2014</h2>
+
+<ul>
+<li>Encoding URI for API call.</li>
+<li>Fixed formatting issues.</li>
+<li>Fixed alt temps bug.</li>
+<li>Hat tip to <a href="https://github.com/defvayne23">@defvayne23</a> for the suggestions.</li>
+</ul>
+
+<h2 id="v2.5-february52014">v2.5 - February 5 2014</h2>
+
+<ul>
+<li>Removed deprecated weather.search YQL table.</li>
+<li>Added geo.placefinder YQL table for searching locations. This allows you to get your location in a more forgiving format than before including latitude and longitude.</li>
+<li>Removed <code>options.zipcode</code> as <code>options.location</code> now accepts any combination of city, state, and zipcode.</li>
+<li>Removed <code>timeOfDay</code> as it was buggy and wouldn&#8217;t return correctly anyways. Currently there is not a method to make this work accurately. See <a href="#cn:8" id="cnref:8" title="see citation" class="citation">(8)</a>(https://github.com/monkeecreate/jquery.simpleWeather/issues/66) for info.</li>
+<li>Removed <code>http:</code> from api call and image source to allow for https.</li>
+</ul>
+
+<h2 id="v2.4-january222014">v2.4 - January 22 2014</h2>
+
+<ul>
+<li>Added four day forecast with recent Yahoo Weather API update.</li>
+</ul>
+
+<h2 id="v2.3-june162013">v2.3 - June 16 2013</h2>
+
+<ul>
+<li>Added <code>timeOfDay</code> for custom day/night icons.</li>
+<li>Fix for new Yahoo API error result.</li>
+</ul>
+
+<h2 id="v2.2-april202013">v2.2 - April 20 2013</h2>
+
+<ul>
+<li>Added high and low alt temps.</li>
+<li>Added alt temp unit.</li>
+</ul>
+
+<h2 id="v2.1.2-january252013">v2.1.2 - January 25 2013</h2>
+
+<ul>
+<li>Just a version bump for jQuery plugin directory.</li>
+</ul>
+
+<h2 id="v2.1-november182012">v2.1 - November 18 2012</h2>
+
+<ul>
+<li>Added WOEID location param for all.</li>
+</ul>
+
+<h2 id="v2.0.1-january262012">v2.0.1 - January 26 2012</h2>
+
+<ul>
+<li>Plenty of code cleanup but no additions, fixes, or deletions.</li>
+</ul>
+
+<h2 id="v2.0-november232011">v2.0 - November 23 2011</h2>
+
+<ul>
+<li>Added forecast condition code.</li>
+</ul>
+
+<h2 id="v1.9-october32011">v1.9 - October 3 2011</h2>
+
+<ul>
+<li>Added alt temp.</li>
+</ul>
+
+<h2 id="v1.8-may152011">v1.8 - May 15 2011</h2>
+
+<ul>
+<li>Fixed wind direction.</li>
+<li>Added calculations for the heat index.</li>
+</ul>
+
+<h2 id="v1.7-may82011">v1.7 - May 8 2011</h2>
+
+<ul>
+<li>Added condition code.</li>
+</ul>
+
+<h2 id="v1.6-december162010">v1.6 - December 16 2010</h2>
+
+<ul>
+<li>Fixed <code>windDirection</code> bug.</li>
+</ul>
+
+<h2 id="v1.5-june292010">v1.5 - June 29 2010</h2>
+
+<ul>
+<li>Fixed errors in wind direction calculations.</li>
+</ul>
+
+<h2 id="v1.4-june42010">v1.4 - June 4 2010</h2>
+
+<ul>
+<li>Fixed issue of a location returning multiple results.</li>
+</ul>
+
+<h2 id="v1.3-may262010">v1.3 - May 26 2010</h2>
+
+<ul>
+<li>Fixed bug with trailing commas for IE.</li>
+<li>Added <code>$.getJSON()</code> instead of <code>$.ajax()</code>.</li>
+<li>Added better error message if the location is invalid.</li>
+</ul>
+
+<h2 id="v1.2-may182010">v1.2 - May 18 2010</h2>
+
+<ul>
+<li>Added location param for those outside the US.</li>
+<li>Changed <code>thumbnail</code> to a hardcoded url.</li>
+</ul>
+
+<h2 id="v1.1-may172010">v1.1 - May 17 2010</h2>
+
+<ul>
+<li>Added <code>thumbnail</code> image.</li>
+</ul>
+
+<h2 id="v1.0-may162010">v1.0 - May 16 2010</h2>
+
+<ul>
+<li>Initial commit.</li>
+</ul>
+
+<div class="citations">
+<hr />
+<ol>
+
+<li id="cn:1">
+<p>174 <a href="#cnref:1" title="return to body" class="reversecitation">&#160;&#8617;</a></p>
+</li>
+
+<li id="cn:2">
+<p>101 <a href="#cnref:2" title="return to body" class="reversecitation">&#160;&#8617;</a></p>
+</li>
+
+<li id="cn:3">
+<p>90 <a href="#cnref:3" title="return to body" class="reversecitation">&#160;&#8617;</a></p>
+</li>
+
+<li id="cn:4">
+<p>88 <a href="#cnref:4" title="return to body" class="reversecitation">&#160;&#8617;</a></p>
+</li>
+
+<li id="cn:5">
+<p>79 <a href="#cnref:5" title="return to body" class="reversecitation">&#160;&#8617;</a></p>
+</li>
+
+<li id="cn:6">
+<p>77 <a href="#cnref:6" title="return to body" class="reversecitation">&#160;&#8617;</a></p>
+</li>
+
+<li id="cn:7">
+<p>72 <a href="#cnref:7" title="return to body" class="reversecitation">&#160;&#8617;</a></p>
+</li>
+
+<li id="cn:8">
+<p>66 <a href="#cnref:8" title="return to body" class="reversecitation">&#160;&#8617;</a></p>
+</li>
+
+</ol>
+</div>
+
+</body>
+</html>
+
