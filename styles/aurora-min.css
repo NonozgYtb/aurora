@@ -241,7 +241,7 @@ body {
 }
 
 a {
-	color: #202020;
+	color: #a2a2a2;
 	outline: 0;
 	text-decoration: none
 }
@@ -254,7 +254,7 @@ a.active,
 a:active,
 a:focus,
 a:hover {
-	color: #060606;
+	color: #ffffff;
 	text-decoration: underline
 }
 
@@ -5989,7 +5989,7 @@ svg.pulse-svg .mic {
 	-webkit-flex-basis: 100%;
 	flex-basis: 100%;
 	padding: .8rem 0;
-	color: rgba(255, 255, 255, .5);
+	color: #ffffffa6;
 	font-weight: 400;
 	line-height: 1.8rem;
 	text-shadow: 0 0 5px rgba(0, 0, 0, .45);

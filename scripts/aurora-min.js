@@ -1,28 +1,29 @@
 "use strict";
-console.log(`%c Aurora %c V1.3.2 %c `,
- "background:#35495e ; padding: 1px; border-radius: 3px 0 0 3px;  color: #fff", `background: #0194fd; padding: 1px; border-radius: 0 3px 3px 0;  color: #fff`, "background:transparent")
 
-console.clearer = function() {
-	console.clear()
-	console.log(`%c Aurora %c V1.3.2 %c `,
-	 "background:#35495e ; padding: 1px; border-radius: 3px 0 0 3px;  color: #fff", `background: #0194fd; padding: 1px; border-radius: 0 3px 3px 0;  color: #fff`, "background:transparent")		
+console.clearer = function () {
+    console.clear()
+    console.log(`%c Aurora %c V1.3.2 %c `,
+        "background:#35495e ; padding: 1px; border-radius: 3px 0 0 3px;  color: #fff", `background: #0194fd; padding: 1px; 
+        border-radius: 0 3px 3px 0;  color: #fff`, "background:transparent")
 }
+
 console.clearer()
 
 var overlaysers = document.querySelectorAll('.modal-overlay')
-    overlaysers.forEach(function(overlayser) {
-      overlayser.addEventListener("click", function() {
-		$("button[class^=close], button[id^=close]").toArray().forEach((el) => el.click())
-	  })
+overlaysers.forEach(function (overlayser) {
+    overlayser.addEventListener("click", function () {
+        $("button[class^=close], button[id^=close]").toArray().forEach((el) => el.click())
     })
-		
+})
+
 var blocker = true;
 var actualSlide = 1;
 document.addEventListener('wheel', tt);
+
 function addWithLimit(vars, add, min, max) {
-    var a = vars-add;
-    if(a<min) a = min;
-    if(a>max) a = max;
+    var a = vars - add;
+    if (a < min) a = min;
+    if (a > max) a = max;
     return a;
 };
 async function blockers() {
@@ -31,25 +32,29 @@ async function blockers() {
         blocker = true;
     }, 400);
 };
+
 function tt(e) {
     var valid = true
     var t = document.getElementsByClassName("modal");
-    for(let i = 0; i < t.length; i++) {
-        if(t[i].classList.contains("active")) {
-            valid=false;
+    for (let i = 0; i < t.length; i++) {
+        if (t[i].classList.contains("active")) {
+            valid = false;
         }
     };
-    if(valid && blocker) {
+    if (valid && blocker) {
         blockers();
         setMenuActive(addWithLimit(actualSlide, Math.sign(e.deltaY), 0, 2));
     }
 }
+
 document.addEventListener('keyup', logKey);
+
 function logKey(e) {
-    if(e.key == "Escape") {
-		$("button[class^=close], button[id^=close]").toArray().forEach((el) => el.click())
+    if (e.key == "Escape") {
+        $("button[class^=close], button[id^=close]").toArray().forEach((el) => el.click())
     };
-  };
+};
+
 function dynamicSort(t) {
     var e = 1;
     return "-" === t[0] && (e = -1, t = t.substr(1)),

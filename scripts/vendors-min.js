@@ -30315,7 +30315,7 @@ var STICKIES = (function () {
         top: '100px',
         left: screenWidth + 'px',
         text: ''
-      }
+	  }
 
       return $('<div />', {
           'class': 'sticky',
@@ -30402,9 +30402,13 @@ var STICKIES = (function () {
           text: btoa(notesText)
 		}
 	
-	if(notesText.replace(/<\/?[^>]+(>|$)/g, "") == "")
+	if(notesText.replace(/<\/?[^>]+(>|$)/g, "") == "" || obj["text"].replace(/<\/?[^>]+(>|$)/g, "") == ""  ) {
 		//$(this).context.remove($(this).context);
+		//deleteSticky(obj["id"])
+		that[0].children[0].children[1].click()
 		deleteSticky(obj["id"])
+		$(this).context.remove($(this).context);
+	}
 		
 	//! Imp
 
