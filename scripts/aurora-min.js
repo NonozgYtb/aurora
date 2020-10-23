@@ -1,7 +1,21 @@
 "use strict";
 console.log(`%c Aurora %c V1.3.2 %c `,
  "background:#35495e ; padding: 1px; border-radius: 3px 0 0 3px;  color: #fff", `background: #0194fd; padding: 1px; border-radius: 0 3px 3px 0;  color: #fff`, "background:transparent")
-        
+
+console.clearer = function() {
+	console.clear()
+	console.log(`%c Aurora %c V1.3.2 %c `,
+	 "background:#35495e ; padding: 1px; border-radius: 3px 0 0 3px;  color: #fff", `background: #0194fd; padding: 1px; border-radius: 0 3px 3px 0;  color: #fff`, "background:transparent")		
+}
+console.clearer()
+
+var overlaysers = document.querySelectorAll('.modal-overlay')
+    overlaysers.forEach(function(overlayser) {
+      overlayser.addEventListener("click", function() {
+		$("button[class^=close], button[id^=close]").toArray().forEach((el) => el.click())
+	  })
+    })
+		
 var blocker = true;
 var actualSlide = 1;
 document.addEventListener('wheel', tt);
@@ -33,12 +47,7 @@ function tt(e) {
 document.addEventListener('keyup', logKey);
 function logKey(e) {
     if(e.key == "Escape") {
-        var t = document.getElementsByClassName("modal");
-        for(let i = 0; i < t.length; i++) {
-            if(t[i].classList.contains("active")) {
-                t[i].classList.remove("active");
-            };
-        };
+		$("button[class^=close], button[id^=close]").toArray().forEach((el) => el.click())
     };
   };
 function dynamicSort(t) {

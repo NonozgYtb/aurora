@@ -547,14 +547,22 @@ abbr[title] {
 .btn.btn-link {
 	background: 0 0;
 	border-color: transparent;
-	color: #202020
+	color: #a2a2a2
+}
+
+.form-select {
+	background: #141c25;
+}
+
+.form-select option {
+	background: #141c25;
 }
 
 .btn.btn-link.active,
 .btn.btn-link:active,
 .btn.btn-link:focus,
 .btn.btn-link:hover {
-	color: #060606
+	color: #e6e6e6
 }
 
 .btn.btn-sm {
@@ -757,7 +765,8 @@ textarea.form-input {
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
-	border: .1rem solid #c4c9d3;
+	border: none;
+    box-shadow: 0 1px 4px black;
 	border-radius: .2rem;
 	color: inherit;
 	font-size: 1.4rem;
@@ -776,14 +785,14 @@ textarea.form-input {
 }
 
 .form-select:not([multiple]) {
-	background: #fff url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='%23667189' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E") no-repeat right .75rem center/.8rem 1rem;
+	background: #141c25 url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='%23667189' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E") no-repeat right .75rem center/.8rem 1rem;
 	height: 3.2rem;
 	padding-right: 2.4rem
 }
 
 .form-select:focus {
-	border-color: #202020;
-	box-shadow: 0 0 0 .2rem rgba(32, 32, 32, .15)
+    border: none;
+    box-shadow: 0 1px 4px black !important;
 }
 
 .form-select::-ms-expand {
@@ -2230,7 +2239,7 @@ code {
 
 .modal-container {
 	background: #fff;
-	border-radius: .5rem;
+	border-radius: .75rem;
 	display: block;
 	padding: 0;
 	box-shadow: 0 .4rem 1rem rgba(69, 77, 93, .3);
@@ -4369,8 +4378,9 @@ ul.bxslider {
 	width: 150px;
 	height: 150px;
 	margin: 2px;
-	-webkit-transition: all .3s ease;
-	transition: all .3s ease
+	-webkit-transition: all .2s ease;
+	transition: all .2s ease;
+    border-radius: 6px;
 }
 
 #modalApps .apps-item img,
@@ -4380,7 +4390,7 @@ ul.bxslider {
 	text-overflow: ellipsis;
 	overflow: hidden;
 	width: 130px;
-	color: #50596c
+    color: #b3b3b3;
 }
 
 #modalApps .apps-item img {
@@ -4389,7 +4399,7 @@ ul.bxslider {
 }
 
 #modalApps .apps-item:hover {
-	background-color: #fff
+	background-color: #ffffff08;
 }
 
 #modalApps .modal-container {
@@ -4893,7 +4903,9 @@ ul.bxslider {
 }
 
 .modal .modal-container {
-	background-color: rgba(255, 255, 255, .9)
+    background-color: #141c25;
+    color: #fff;
+    box-shadow: 0 5px 21px 3px black;
 }
 
 .modal .modal-container .modal-body {
@@ -6272,7 +6284,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-	background: rgba(0, 0, 0, .55);
+	background: rgba(255, 255, 255, .55);
 	border-radius: 20px
 }
 
